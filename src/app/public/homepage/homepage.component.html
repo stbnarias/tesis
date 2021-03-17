@@ -1,0 +1,204 @@
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand pathway-logo pathway-badge">Pathways</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="menuprincipal">
+  <div id="home" class="jumbotron intro bg-img-section">
+    <div class="container brand">
+      <h1 class="pathway-logo pathway-front">Metabolic Pathways</h1>
+    </div>
+  </div>
+  <div id="processing" class="container no-img-section">
+    <div class="row">
+      <form class="file-form" role="form" data-toggle="validator" ng-submit="process()">
+        <div>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <h4>Pathway 1 <span class="h6" style="color:grey;">(KEGG KGML - .xml file)</span></h4>
+                    <div class="input-group">
+											<span class="input-group-btn">
+                        <span class="btn btn-default" (click)="createGraph1()"> New</span>
+                        <span class="btn btn-default"> Select</span>
+												<span type="button" class="btn btn-default btn-file">Browse..
+													<input type="file" (change)="onSelectedFile($event)">
+												</span>
+											</span>
+                      <input value={{pathwayName1}} type="text" class="form-control pathway-name" readonly>
+                    </div>
+                    <!-- -->
+                    <button class="btn btn-default" *ngIf="pathwayGraph1" (click)="savePathway1()"> Save</button>
+                    <!-- -->
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <app-graph-maker *ngIf="creatingGraph1"></app-graph-maker>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <h4>Pathway 2 <span class="h6" style="color:grey;">(KEGG KGML - .xml file)</span></h4>
+                    <div class="input-group">
+											<span class="input-group-btn">
+                        <span class="btn btn-default " (click)="createGraph2()"> New</span> <!-- far fa-plus-square -->
+                        <span class="btn btn-default "> Select</span> <!-- far fa-hand-pointer -->
+												<span class="btn btn-default btn-file">Browse..
+													<input type="file" (change)="onSelectedFile2($event)">
+												</span>
+											</span>
+                      <input value={{pathwayName2}} type="text" class="form-control pathway-name" readonly>
+                    </div>
+                    <!-- -->
+                    <button class="btn btn-default" *ngIf="pathwayGraph2" (click)="savePathway2()"> Save</button>
+                    <!-- -->
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+
+              <app-graph-maker2 *ngIf="creatingGraph2"></app-graph-maker2>
+
+            </div>
+            <br>
+            <div id="output" class="col-md-7"></div>
+          </div>
+          <app-pathway-image-view [imagepathway1]="imagepathway1"
+                                  [imagepathway2]="imagepathway2"></app-pathway-image-view>
+        </div>
+        <div class="container"> <!-- <app-algorithm-selector></app-algorithm-selector> -->
+          <div class="row">
+            <div class="col-md-5">
+              <app-algorithm-selector *ngIf="pathwayGraph1 && pathwayGraph2"></app-algorithm-selector>
+            </div>
+            <div class="row" id="Nodes-Parameter-View"
+                 *ngIf="currentAlgorithmTypeSelected === 'Extended' && currentAlgorithmCodeSelected !== 'A1T1'">
+              <div class="col-md-4">
+                <h4 style="text-align: center;">Nodes Parameters</h4>
+                <div class="col-md-6 container-fluid">
+                  <div class="pathway1-nodes">
+                    Pathway 1
+                    <br>
+
+                    <div class="starting-node"
+                         *ngIf="currentAlgorithmCodeSelected == 'A1T2' || currentAlgorithmCodeSelected == 'A1T3' || currentAlgorithmCodeSelected == 'A1T4'">
+                      Starting Node
+                      <br>
+                      <select class="form-control" (change)="setStartNodeGraph1($event)">
+                        <option *ngFor="let node of pathwayNodes1" [value]="node['index']">
+                          {{node['node']}}
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="finishing-node"
+                         *ngIf="currentAlgorithmCodeSelected == 'A1T3' || currentAlgorithmCodeSelected == 'A1T4' || currentAlgorithmCodeSelected == 'A1T5'">
+                      Finishing Node
+                      <select class="form-control" (change)="setEndNodeGraph1($event)">
+                        <option *ngFor="let index of pathwayNodes1" [value]="index['index']">
+                          {{index['node']}}
+                        </option>
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- -->
+                <div class="col-md-6 container-fluid">
+                  <div class="pathway2-nodes">
+                    Pathway 2
+                    <br>
+
+                    <div class="starting-node"
+                         *ngIf="currentAlgorithmCodeSelected == 'A1T2' || currentAlgorithmCodeSelected == 'A1T3' || currentAlgorithmCodeSelected == 'A1T4'">
+                      Starting Node
+                      <br>
+                      <select class="form-control" (change)="setStartNodeGraph2($event)">
+                        <option *ngFor="let index of pathwayNodes2" [value]="index['index']">
+                          {{index['node']}}
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="finishing-node"
+                         *ngIf="currentAlgorithmCodeSelected == 'A1T3' || currentAlgorithmCodeSelected == 'A1T4' || currentAlgorithmCodeSelected == 'A1T5'">
+                      Finishing Node
+                      <select class="form-control" (change)="setEndNodeGraph2($event)">
+                        <option *ngFor="let index of pathwayNodes2" [value]="index['index']">
+                          {{index['node']}}
+                        </option>
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div> <!-- row 2 -->
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-md-5">
+              <app-alignment-values-table
+                *ngIf="pathwayGraph1 && pathwayGraph2 && currentAlgorithmCodeSelected !== 'A2'"></app-alignment-values-table>
+            </div>
+          </div>
+
+          <br>
+          <div *ngIf="pathwayGraph1 && pathwayGraph2" class="col-md-5">
+            <div class="row">
+              <div class="col-md-6">
+                <input type="submit" class="btn btn-success" value="Process Pathways" (click)="processPathways()">
+              </div>
+              <div class="col-md-6" *ngIf="currentAlgorithmExecutionResult">
+                <input type="submit" class="btn btn-success" value="Download pdf" (click)="downloadpdf()">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <br>
+      <br>
+
+      <div id="content" class="row result-row" *ngIf="currentAlgorithmExecutionResult" #content>
+
+        <h2>Execution results</h2>
+        <div class="table-responsive">
+          <table class="table">
+
+            <thead>
+            <tr>
+              <th scope="col">Key</th>
+              <th scope="col">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of currentAlgorithmExecutionResult">
+              <td class="key" scope="row">{{data.key}} </td>
+              <td>{{data.value}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</main>
+<footer class="menuprincipal">
+  <div class="container">
+    <hr>
+    <p>&copy; Metabolic Pathways {{anio}}</p>
+  </div>
+</footer>

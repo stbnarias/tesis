@@ -1,0 +1,12 @@
+{
+	"B-D-fructofuranose 6-phosphate": ["fructose 1,6-bisphosphate"],
+	"fructose 1,6-bisphosphate": ["B-D-fructofuranose 6-phosphate", "glycerone phosphate", "D-glyceraldehyde 3-phosphate"],
+	"glycerone phosphate": ["fructose 1,6-bisphosphate", "D-glyceraldehyde 3-phosphate"],
+	"D-glyceraldehyde 3-phosphate": ["fructose 1,6-bisphosphate", "glycerone phosphate", "3-phospho-D-glyceroyl-phosphate","3-phospho-D-glycerate"],
+	"3-phospho-D-glyceroyl-phosphate": ["D-glyceraldehyde 3-phosphate", "3-phospho-D-glycerate"],
+	"3-phospho-D-glycerate": ["D-glyceraldehyde 3-phosphate", "3-phospho-D-glyceroyl-phosphate", "2-phospho-D-glycerate"],
+	"2-phospho-D-glycerate": ["3-phospho-D-glycerate", "phosphoenolpyruvate"],
+	"phosphoenolpyruvate": ["2-phospho-D-glycerate", "pyruvate"],
+	"pyruvate": ["phosphoenolpyruvate"]
+}
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Metabolic Pathways</title>
+	<meta name="description" content="Metabolic Pathways">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="AppController" ng-init="init()">
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>                        
+						</button>
+					<a class="navbar-brand" href="#home">Pathways</a>
+				</div>
+				<div id="top-nav" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li id="nav-home" class="navigation active"><a ng-click="setActive('nav-home')" href="#home">Home</a></li>
+						<li id="nav-processing" class="navigation"><a ng-click="setActive('nav-processing')" href="#processing">Processing</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div id="home" class="jumbotron intro bg-img-section">
+			<div class="container brand">
+				<h1>Metabolic Pathways</h1>
+			</div>
+		</div>
+		<div id="processing" class="container no-img-section">
+			<div class="row">
+				<form class="file-form" role="form" data-toggle="validator" ng-submit="process()">
+					<div>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<h4>Pathway 1 <span class="h6" style="color:grey;">(KEGG KGML - .xml file)</span></h4>
+											<div class="input-group">
+												<span class="input-group-btn">
+													<span class="btn btn-default btn-file">
+														Browse.. <input 
+																	data-error="The pathway is required." 
+																	required 
+																	class="form-control" 
+																	type="file" 
+																	ng-model="pathway1"
+																	ngf-select
+																	ngf-pattern="'text/xml'"
+																	accept="text/xml"
+																	ngf-max-size="20MB">   
+													</span>
+												</span>
+												<input type="text" class="form-control pathway-name" readonly>
+											</div>
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<h4>Pathway 2 <span class="h6" style="color:grey;">(KEGG KGML - .xml file)</span></h4>
+											<div class="input-group">
+												<span class="input-group-btn">
+													<span class="btn btn-default btn-file">
+														Browse.. <input 
+																	data-error="The pathway is required." 
+																	required 
+																	class="form-control" 
+																	type="file" 
+																	ng-model="pathway2"
+																	ngf-select
+																	ngf-pattern="'text/xml'"
+																	accept="text/xml"
+																	ngf-max-size="20MB">   
+													</span>
+												</span>
+												<input type="text" class="form-control pathway-name" readonly>
+											</div>
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<input type="submit" class="btn btn-success" value="Process Pathways">
+									</div>
+								</div>
+							</div>
+							<br>
+							<div id="output" class="col-md-7"></div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="container">
+			<hr>
+			<p>&copy; Metabolic Pathways 2017</p>
+		</div>
+	</footer>
+	<script src="js/vendor/angular-1.3.15.min.js"></script>
+	<script src="js/vendor/ng-file-upload.min.js"></script>
+	<script src="js/vendor/ng-file-upload-shim.min.js"></script>
+	<script src="js/vendor/jquery-3.1.1.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/vendor/validator-0.11.5.js"></script>
+	<script src="js/controller/pathways.js"></script>
+	<script src="js/effects.js"></script>
+</body>
+
+</html>

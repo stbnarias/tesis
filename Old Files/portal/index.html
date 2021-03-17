@@ -1,0 +1,126 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Ebro portal</title>
+        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-orange.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            #view-source {
+              position: fixed;
+              display: block;
+              right: 0;
+              bottom: 0;
+              margin-right: 40px;
+              margin-bottom: 40px;
+              z-index: 900;
+            }
+            
+            .a {
+                text-decoration-style: solid;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1 class="mdl-color-text--grey-600" 
+            style="padding-left:30px; margin-bottom:0px;">Ebro portal</h1>
+        <p style="padding-left:35px">
+            Prof. Esteban Arias-Méndez 
+            <span class="mdl-color-text--grey-600" >
+            Ingeniería en Computación <br>
+            Escuela de Computación - Tecnológico de Costa Rica <br>
+            <a href="mailto:esteban.arias@tec.ac.r">esteban.arias@tec.ac.r</a> <a href="mailto:earias@ic-itcr.ac.cr">earias@ic-itcr.ac.cr</a>
+            </span>
+        </p>
+        
+          <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+            <main class="mdl-layout__content">
+                <div class="demo-blog__posts">
+                
+                  
+                      <div class="mdl-card tese mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+                        <div class="mdl-card__media mdl-color-text--grey-50">
+                          <h3></h3>
+                        </div>
+                        <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                          TESE Es un lenguaje de programación compuesto sólo por expresiones, es decir, es funcional (O una especie de). Regula la composición de los programas a partir de expresiones, y cada expresión devuelve un valor.
+                        </div>
+                        <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                            Miembros <br>
+                            <span style="padding-left:10px;">
+                                <span class="mdl-color-text--grey">Autores</span> <br>
+                                <span style="padding-left:10px;"></span>
+                                Kevin Castro-Fuentes<br>
+                                <span style="padding-left:10px;"></span>
+                                Andrés Salazar-Brenes<br>
+                                <span class="mdl-color-text--grey">Asistente</span> <br>
+                                <span style="padding-left:10px;"></span>
+                                Hans Araya-González<br>
+                                <span class="mdl-color-text--grey">Tutor</span> <br>
+                                <span style="padding-left:10px;"></span>
+                                Esteban Arias-Méndez<br>
+                            </span>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a href="/tese" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--orange">Visitar</a>
+                          </div>
+
+                      </div>
+                  
+             
+                    
+                      <div class="mdl-card metabolic-pathways mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+                        <div class="mdl-card__media mdl-color-text--grey-50">
+                          <h3><a href="/metabolicPathways"></a></h3>
+                        </div>
+                        <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                          Implementación de los dos algoritmos propuestos en la publicación (Arias-Méndez, 2017) "Alternative low cost algorithms for metabolic pathway comparison"
+                        </div>
+                        <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                            Miembros
+                            <span style="padding-left:10px;">
+                                <span class="mdl-color-text--grey">Autor</span> <br>
+                                <span style="padding-left:10px;"></span>
+                                Esteban Arias-Méndez <br>
+                                <span class="mdl-color-text--grey">Asistentes</span> <br>
+                                <span style="padding-left:10px;"></span>
+                                Kevin Castro-Fuentes<br>
+                                <span style="padding-left:10px;"></span>
+                                Seth Stalley<br>
+                                <span style="padding-left:10px;"></span>
+                                Pablo Vargas-Rosales
+                            </span>
+                        </div>
+                          <div class="mdl-card__actions mdl-card--border">
+                            <a href="/metabolicPathways" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--orange">Visitar</a>
+                          </div>
+                      </div>
+                    
+                </div>
+                
+                <footer class="mdl-mini-footer">
+                  <div class="mdl-mini-footer--left-section">
+                    <div class="container">
+                            <hr>
+                            <p>&copy; <span id='year'></span></p>
+                    </div>
+                  </div>
+              
+                </footer>
+              </main>
+              <div class="mdl-layout__obfuscator"></div>
+            </div>
+    </body>
+    
+    <script type="text/javascript">
+      document.getElementById('year').innerHTML = new Date().getFullYear();
+    </script>
+
+</html>

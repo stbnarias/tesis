@@ -1,0 +1,30 @@
+<html>
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand pathway-logo pathway-badge">Pathways</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<body>
+  <!-- -->
+  <div class="row">
+    <div id="wrapper-filter">
+      <ul id="filter-bar" class="algorithm-type-selector">
+        <span class="pill"></span>
+        <li class="filter-option files active" data-target="files" value="KGML Files" (click)="switchToFiles()"> KGML Files</li>
+        <li class="filter-option dictionary" data-target="dictionary" value="dictionary" (click)="switchToDictionary()">Dictionary</li>
+      </ul>
+    </div>
+    <div class="container">
+      <app-kgml-files-list *ngIf="filesSelected"></app-kgml-files-list>
+      <app-metabolite-dictionary *ngIf="dictionarySelected"></app-metabolite-dictionary>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

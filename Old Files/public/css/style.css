@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Vibur');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+	background: #FFFFFF url('../images/greyzz.png') top left repeat;
+}
+
+p {
+	font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Poppins', sans-serif;
+	color: black;
+}
+
+h4 {
+	font-size: 22px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+#about p {
+	line-height: 30px;
+}
+
+#about h1 {
+	margin-bottom: 40px;
+}
+
+.navbar-brand {
+	font-family: 'Vibur', cursive;
+	font-size: 30px;
+}
+
+.brand h1 {
+	font-family: 'Vibur', cursive;
+	line-height: 80%;
+	font-size: 120px !important;
+	letter-spacing: 5px;
+}
+
+.brand p {
+	text-align: center;
+}
+
+.para-brand {
+	font-family: 'Vibur', cursive;
+	font-size: 60px;
+}
+
+.intro {
+	margin: 0;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 140px;
+	text-align: center;
+	color: white;
+}
+
+.bg-img-section {
+	background: linear-gradient(rgba(0, 0, 0, .60), rgba(0, 0, 0, .55)), url('../images/fractal.gif') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin: 0;
+	min-height: 100vh;
+	padding-top: 10%;
+	padding-bottom: 2%;
+}
+
+.no-img-section {
+	min-height: 100vh;
+	background-color: transparent;
+	padding-top: 5%;
+	padding-bottom: 2%;
+}
+
+#output {
+	display: none;
+    height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#output p {
+	margin: 0;
+	font-size: 16px;
+}
+
+.dict-entry {
+	margin-left: 10px !important;
+	font-size: 14px !important;
+}
+
+.pathway, .alignment, .indentify {
+	font-size: 14px !important;
+}
+
+.alignment {
+	font-family: 'Source Code Pro', monospace;
+}
+
+.slideanim {
+	visibility: hidden;
+}
+
+.slide {
+	animation-name: slide;
+	-webkit-animation-name: slide;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	visibility: visible;
+}
+
+@keyframes slide {
+	0% {
+		opacity: 0;
+		transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+@-webkit-keyframes slide {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(70%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0%);
+	}
+}
+
+@media screen and (max-width: 1020px) {
+	.brand h1 {
+		font-size: 120px !important;
+		letter-spacing: 0;
+	}
+	.brand p {
+		font-size: 20px !important;
+	}
+	.bg-img-section {
+		padding-top: 20%;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.brand h1 {
+		font-size: 90px !important;
+		letter-spacing: 0;
+	}
+	.brand p {
+		font-size: 20px !important;
+	}
+	.bg-img-section {
+		padding-top: 20%;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.brand h1 {
+		font-size: 60px !important;
+		letter-spacing: 0;
+	}
+	.brand p {
+		font-size: 15px !important;
+	}
+	.bg-img-section {
+		padding-top: 40%;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}

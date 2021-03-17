@@ -1,0 +1,11 @@
+{
+	"L-tryptophan": ["tryptamine", "N-hydroxyl-L-tryptophan", "(indol-3-yl)pyruvate"],
+	"tryptamine": ["N-hydroxyl-tryptamine"],
+	"N-hydroxyl-L-tryptophan": ["N,N-dihydroxyl-L-tryptophan"],
+	"N-hydroxyl-tryptamine": ["(E)-indol-3-ylacetaldoxime"],
+	"N,N-dihydroxyl-L-tryptophan": ["(E)-indol-3-ylacetaldoxime"],
+	"(E)-indol-3-ylacetaldoxime": ["indole-3-acetonitrile"],		
+	"indole-3-acetonitrile": ["indole-3-acetamide", "indole-3-acetate"],
+	"indole-3-acetamide": ["indole-3-acetate"],
+	"(indol-3-yl)pyruvate": ["L-tryptophan","indole-3-acetate"]	
+}

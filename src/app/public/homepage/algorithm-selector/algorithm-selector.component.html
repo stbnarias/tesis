@@ -1,0 +1,18 @@
+
+<h4>Algorithm Selector</h4>
+<div id="wrapper-filter">
+  <ul id="filter-bar" class="algorithm-type-selector">
+    <span class="pill"></span>
+    <li class="filter-option original active" data-target="original" value="Original" (click)="changeAlgorithmView('Original')">Original</li>
+    <li class="filter-option extended" data-target="extended" value="Extended" (click)="changeAlgorithmView('Extended')">Extended</li>
+    <li class="filter-option weighted" data-target="weighted" value="Weighted" (click)="changeAlgorithmView('Weighted')">Weighted</li>
+  </ul>
+</div>
+
+<select class="form-control algorithm-selector" id="final-algorithm-selector" ngModel="options" (ngModelChange)="displayCurrentValue($event)">
+  <option *ngFor="let opt of options" [value]="opt['value']" class="selector-value-holder">
+    {{opt['label']}}
+  </option>
+</select>
+
+

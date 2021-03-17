@@ -1,0 +1,17 @@
+
+<h2>Image pathway View</h2>
+<div id="wrapper-filter2">
+  <ul id="filter-bar2" class="algorithm-type-selector">
+    <span class="pill"></span>
+    <li class="filter-option name active" data-target="name" value="name" (click)="changeImageView('name')">Name</li>
+    <li class="filter-option code" data-target="code" value="code" (click)="changeImageView('code')">Code</li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <img src={{imagepathway1}} class="img-responsive">
+  </div>
+  <div class="col-sm-6">
+    <img src={{imagepathway2}} class="img-responsive">
+  </div>
+</div>

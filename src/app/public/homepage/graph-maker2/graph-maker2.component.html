@@ -1,0 +1,72 @@
+<div class="row main-content">
+
+  <div class="node-creator">
+    <h4>Add Node to Graph</h4>
+    <div class="input-group">
+      <input type="text" class="form-control" id="node-input2" placeholder="Node name">
+      <span class="input-group-btn">
+        <span type="button" class="btn btn-default" (click)="addNode()">Add
+      </span>
+    </span>
+    </div>
+    <div class="node-viewer-body">
+      <ul id="nodes">
+        <li *ngFor="let node of currentNodes">
+          {{node['name']}}
+          <span class="btn btn-default" (click)="deleteNode(node)"><i class="fa fa-trash"></i></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="relations-creator">
+    <h4>Add Nodes Relation</h4>
+    <h5>From Node</h5>
+    <select class="form-control" (change)="setFromNode($event)">
+      <option disabled selected value> -- Select a Node -- </option>
+      <option *ngFor="let node of currentNodes" value="{{node['name']}}">{{node['name']}}</option>
+    </select>
+    <h5>To Node</h5>
+    <select class="form-control" (change)="setToNode($event)">
+      <option disabled selected value> -- Select a Node -- </option>
+      <option *ngFor="let node of currentNodes" value="{{node['name']}}">{{node['name']}}</option>
+    </select>
+    <br>
+    <div class="input-group">
+      <button class="btn btn-default" (click)="addEdge()">Add Edge</button>
+    </div>
+  </div>
+
+  <div class="relations-viewer" *ngIf="currentEdges.length > 0">
+    <table>
+      <caption>Current Edges</caption>
+      <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let edge of currentEdges">
+        <td>{{edge.from}}</td>
+        <td>{{edge.to}}</td>
+        <td><button class="btn btn-default" (click)="deleteEdge(edge)"><i class="fa fa-trash"></i></button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="graph-name-saver">
+    <h4>Save Graph with Name</h4>
+    <div class="input-group">
+      <input type="text" class="form-control" id="graph-name" placeholder="Graph Name">
+      <span class="input-group-btn">
+        <span type="button" class="btn btn-default" (click)="saveGraph()">Save & Exit
+      </span>
+    </span>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,69 @@
+body {
+    background-color:#fff;
+    margin: 0;
+    padding:0;
+    font-family: Tahoma;
+  }
+  h2 {
+    text-align:left;
+    font-size: 30px;
+  }
+  #filter-bar2 {
+    width: 100%;
+    margin:0;
+    padding:0;
+    height:36px;
+    display:inline-flex;}
+  #wrapper-filter2 {
+    background-color:#eee;
+    width: 220px;
+    height:auto;
+    margin:30px 30px 30px 30px;/*auto;*/
+    border-radius: 30px;
+    box-sizing: border-box;
+  
+    }
+  #filter-bar2 li {
+    width: 120px;
+    background-color: transparent;
+    text-align: center;
+    list-style-type: none;
+    z-index:10;
+    cursor: pointer;
+    font-family: Open Sans, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    line-height:36px;
+  }
+  .pill {
+    position: absolute;
+    width:120px;
+    height: 38px;
+    background-color: #333333;
+    border-radius: 30px;
+    color: #444;
+    z-index:10;
+    border: 5px solid #fff;
+    box-sizing: border-box;
+  }
+  .filter-option {
+    transition: color 500ms;
+  }
+  #filter-bar2.name .pill {
+    margin-left: 0px;
+    transition: margin-left 200ms ease;
+  }
+  #filter-bar2.code .pill {
+    margin-left: 100px;
+    transition: margin-left 200ms ease;
+  }
+  
+  .name.active, .code.active{
+    color:#fff;
+    transition: color 200ms;
+  }
+  
+  .algorithm-selector{
+    width: 400px;
+  }
+  
