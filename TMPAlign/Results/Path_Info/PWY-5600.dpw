@@ -1,0 +1,12 @@
+{
+    "PYRUVATE": [
+        "CARBON-DIOXIDE",
+        "ACETYL-COA"
+    ],
+    "ACETYL-COA": [
+        "ACETYL-P"
+    ],
+    "ACETYL-P": [
+        "ACET"
+    ]
+}

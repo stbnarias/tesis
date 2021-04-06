@@ -1,0 +1,27 @@
+{
+    "PYRUFLAVREDUCT-RXN": [
+        [
+            "PYRUVATE"
+        ],
+        [
+            "CARBON-DIOXIDE",
+            "ACETYL-COA"
+        ]
+    ],
+    "PHOSACETYLTRANS-RXN": [
+        [
+            "ACETYL-COA"
+        ],
+        [
+            "ACETYL-P"
+        ]
+    ],
+    "ACETATEKIN-RXN": [
+        [
+            "ACETYL-P"
+        ],
+        [
+            "ACET"
+        ]
+    ]
+}
